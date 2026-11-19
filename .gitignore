@@ -1,0 +1,24 @@
+# Python / Backend
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node / Frontend (Vite)
+node_modules/
+dist/
+build/
+.vite/
+*.log
+
+# Variables de entorno (ignora tus claves pero deja subir el ejemplo)
+.env
+.env.*
+!.env.example
+
+# Editor y Sistema Operativo
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
