@@ -1,0 +1,91 @@
+:root {
+  --navy: #0a1f44;
+  --blue: #1f5fe0;
+  --blue-dark: #174cb8;
+  --tint: #eef3fd;
+  --white: #ffffff;
+  --muted: #51627f;
+  --line: #d3dceb;
+  --danger: #b3261e;
+  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--navy);
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; background: var(--white); }
+button, input, select { font: inherit; }
+
+.page { min-height: 100%; display: flex; flex-direction: column; }
+
+/* Banner (wireframes) */
+.banner {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  padding: 20px 24px; border-bottom: 1px solid var(--line);
+}
+.banner__logo {
+  width: 72px; height: 48px; border: 3px solid var(--navy); border-radius: 10px;
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.banner__logo svg { width: 26px; height: 26px; stroke: var(--blue); }
+.banner__title {
+  margin: 0; font-size: clamp(1.6rem, 4.5vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em;
+}
+
+.main { flex: 1; display: flex; justify-content: center; padding: 48px 24px 24px; }
+.panel { width: 100%; max-width: 460px; }
+.panel--wide { max-width: 720px; }
+.panel h2 { margin: 0 0 4px; font-size: 1.25rem; font-weight: 800; }
+.hint { margin: 0 0 24px; color: var(--muted); }
+
+/* Selector de tipo de acceso */
+.access { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+.access__option {
+  text-align: left; padding: 14px 16px; border: 1.5px solid var(--line); border-radius: 10px;
+  background: var(--white); color: var(--navy); cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+.access__option strong { display: block; font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+.access__option span { font-size: 0.8rem; color: var(--muted); }
+.access__option:hover { border-color: var(--blue); }
+.access__option[aria-checked="true"] { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.access__option[aria-checked="true"] span { color: #b9c8ea; }
+
+/* Formulario */
+.form { display: flex; flex-direction: column; gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field span { font-size: 0.875rem; font-weight: 500; }
+.field input, .field select {
+  height: 44px; padding: 0 12px; border: 1.5px solid var(--line); border-radius: 8px;
+  background: var(--white); color: var(--navy);
+}
+.field input::placeholder { color: #8a97b0; }
+
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.field input:focus-visible, .field select:focus-visible { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--tint); }
+
+/* Botones */
+.btn { height: 44px; padding: 0 22px; border-radius: 8px; border: 1.5px solid transparent; font-weight: 600; cursor: pointer; }
+.btn--primary { background: var(--blue); color: var(--white); }
+.btn--primary:hover:not(:disabled) { background: var(--blue-dark); }
+.btn--secondary { background: var(--tint); color: var(--navy); border-color: var(--line); }
+.btn--secondary:hover:not(:disabled) { border-color: var(--navy); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.footer { display: flex; justify-content: flex-end; padding: 24px 48px 32px; } /* "Salir" abajo a la derecha, como en los wireframes */
+
+.menu { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+
+/* Diálogo de error */
+.overlay { position: fixed; inset: 0; display: grid; place-items: center; padding: 24px; background: rgba(10, 31, 68, 0.55); }
+.dialog { width: 100%; max-width: 400px; padding: 24px; background: var(--white); border-radius: 12px; border-top: 4px solid var(--danger); }
+.dialog h2 { margin: 0 0 8px; color: var(--danger); font-size: 1.1rem; }
+.dialog p { margin: 0 0 20px; line-height: 1.5; }
+
+@media (max-width: 520px) {
+  .access { grid-template-columns: 1fr; }
+  .footer { padding: 16px 24px 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
