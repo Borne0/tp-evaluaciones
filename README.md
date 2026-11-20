@@ -13,18 +13,18 @@ docker compose up -d
 ```bash
 cd backend
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt   # si ya lo tenías instalado, volver a correrlo: se agregaron python-multipart y openpyxl
-cp .env.example .env             # Windows: copy .env.example .env
-python -m app.seed               # datos de prueba (se puede correr varias veces)
-uvicorn app.main:app --reload    # http://localhost:8000/docs
+.venv\Scripts\activate
+pip install -r requirements.txt
+copy .env.example .env
+python -m app.seed
+uvicorn app.main:app --reload
 ```
 
 ### 3. Frontend
 ```bash
 cd frontend
 npm install
-npm run dev                      # http://localhost:5173
+npm run dev
 ```
 
 ## Credenciales de prueba (AUTH_MODE=mock)
