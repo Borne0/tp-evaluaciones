@@ -1,0 +1,5 @@
+Nro candidato;Apellido;Nombre;Nro documento;Tipo documento;Fecha de nacimiento (aaaa-mm-dd);Género (H/M);Nacionalidad;Email;Escolaridad;Eliminado (True/False)
+C0101;SOSA;LAURA;30111222;DNI;1992-03-14;M;ARGENTINA;laura.sosa@example.com;UNIVERSITARIA;False
+C0102;BENITEZ;DIEGO;31222333;DNI;1988-11-02;H;ARGENTINA;diego.benitez@example.com;TERCIARIA;False
+C0005;RUIZ;MATIAS;56789012;DNI;;H;URUGUAYA;matias.ruiz@example.com;;False
+C0003;LOPEZ;CARLOS;34567890;DNI;;H;;;;True
